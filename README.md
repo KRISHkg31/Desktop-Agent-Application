@@ -13,17 +13,13 @@
 <li><strong>ARYAN RAJPUT</strong></li>
 
 <h2> Application Report File</h2>
-<li><strong>Report File: https://docs.google.com/document/d/15cm1dQlnkONjgso4lhXPmMjbdbIx03XL/edit?usp=sharing&ouid=109225541696855840474&rtpof=true&sd=true</strong></li>
-
-<h2>Application Working Video</h2>
-<li><strong>Working Video: https://drive.google.com/file/d/1fF3iS2wmMo0h9PiDb5kE_dpGXMuZ7fnp/view?usp=drive_link </strong></li>
 
 
 
 <h2>Technologies Used</h2>
 
 
-<h3>1. Python</h3>
+<h3> 1. Python</h3>
 <ul>
     <li><strong>Core Language:</strong> Python will be the primary language for developing the desktop agent application.</li>
     <li><strong>Libraries:</strong>
@@ -37,7 +33,7 @@
     </li>
 </ul>
 
-<h3>2. Amazon Web Services (AWS)</h3>
+<h3> 2. Amazon Web Services (AWS)</h3>
 <ul>
     <li><strong>Amazon S3:</strong> For storing and managing uploaded screenshots and activity logs.</li>
     <li><strong>AWS Lambda:</strong> For handling the backend processing of uploads, such as file storage or data transformation.</li>
@@ -45,37 +41,37 @@
     <li><strong>Boto3:</strong> AWS SDK for Python to interact with S3 for uploading files.</li>
 </ul>
 
-<h3>3. FastAPI</h3>
+<h3> 3. FastAPI</h3>
 <ul>
     <li>Used for creating an API that handles configuration updates from a web application, allowing the agent to fetch new configurations (e.g., interval times, screenshot settings).</li>
 </ul>
 
-<h3>4. MongoDB</h3>
+<h3> 4. MongoDB</h3>
 <ul>
     <li>A NoSQL database used for temporarily storing captured data locally (e.g., activity logs and screenshots) before uploading to cloud storage.</li>
 </ul>
 
-<h3>5. React.js</h3>
+<h3> 5. React.js</h3>
 <ul>
     <li>For the front-end of the web application where users can configure the agent settings (e.g., screenshot intervals, whether screenshots should be blurred, etc.).</li>
 </ul>
 
-<h3>6. Encryption & Security</h3>
+<h3> 6. Encryption & Security</h3>
 <ul>
     <li><code>PyCryptodome</code>: A library for implementing encryption to ensure that data is securely uploaded to S3.</li>
 </ul>
 
-<h3>7. System-level Tools</h3>
+<h3> 7. System-level Tools</h3>
 <ul>
     <li><strong>Time Zone Management:</strong> Utilizing Python's <code>tzlocal</code> or <code>pytz</code> libraries for detecting and managing time zone changes.</li>
 </ul>
 
-<h3>8. Testing and Debugging Tools</h3>
+<h3> 8. Testing and Debugging Tools</h3>
 <ul>
     <li><code>Postman</code>: For testing and validating APIs through automated requests, response checks, and collaboration on API development.</li>
 </ul>
 
-<h3>9. Error Handling</h3>
+
 <ul>
     <li><strong>Retry Mechanisms:</strong> For retrying failed uploads due to connectivity issues.</li>
     <li><strong>Queueing:</strong> To handle data that couldn’t be uploaded immediately, ensuring it's uploaded once the network is restored.</li>
