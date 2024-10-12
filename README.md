@@ -5,11 +5,16 @@
   <img src="https://contrib.rocks/image?repo=harshnishad/VinoveProject"/>
 </a>
 
-<h2> Application Report File</h2>
-<li><strong>Report File : </strong></li>
 
-<h2>Application Working Vedio</h2>
-<li><strong>Working Vedio:</strong></li>
+<h2>Team Members:</h2>
+<li><strong>KRISH GUPTA</strong></li>
+<li><strong>HARSH NISHAD</strong></li>
+<li><strong>YUGDEEP PARIHAR</strong></li>
+<li><strong>ARYAN RAJPUT</strong></li>
+
+<h2> Application Report File</h2>
+
+
 
 <h2>Technologies Used</h2>
 
@@ -24,8 +29,6 @@
             <li><code>asyncio</code>: For handling asynchronous tasks like periodic screenshot capture and data uploads.</li>
             <li><code>requests</code>: For sending HTTP requests to upload data to cloud services.</li>
             <li><code>pymongo</code>: For interaction with MongoDB if local storage is required before upload.</li>
-            <li><code>PIL</code> (Pillow): For image processing tasks like blurring screenshots.</li>
-            <li><code>watchdog</code>: For monitoring file system changes or configuration updates.</li>
         </ul>
     </li>
 </ul>
@@ -65,20 +68,30 @@
 
 <h3> 8. Testing and Debugging Tools</h3>
 <ul>
-    <li><code>Pytest</code>: For unit testing the different components of the application.</li>
-    <li><strong>Logging:</strong> Using Python's <code>logging</code> module for error handling, activity tracking, and debugging.</li>
+    <li><code>Postman</code>: For testing and validating APIs through automated requests, response checks, and collaboration on API development.</li>
 </ul>
 
-<h3> 9. Deployment & Packaging</h3>
-<ul>
-    <li><code>PyInstaller</code>: To package the Python script as a standalone executable that can run on users' desktops without requiring them to install Python.</li>
-</ul>
 
-<h3> 10. Error Handling</h3>
 <ul>
     <li><strong>Retry Mechanisms:</strong> For retrying failed uploads due to connectivity issues.</li>
     <li><strong>Queueing:</strong> To handle data that couldn’t be uploaded immediately, ensuring it's uploaded once the network is restored.</li>
 </ul>
+
+
+<h1> Application Key Features </h1>
+<li><strong>Different dashboards for client and admin</strong></li>
+<li><strong>Manage user total active time</strong></li>
+<li><strong>Manage user total inactive time</strong></li>
+<li><strong>Take screenshot manually and automatically </strong></li>
+<li><strong>Store screenshots in AWS S3 bucket </strong></li>
+<li><strong>Locally store screenshots in queue if network related problem arise</strong></li>
+<li><strong>Track Mouse and Keyboard Movements</strong></li>
+<li><strong>Gives warning if user become inactive for more than 30 seconds</strong></li>
+<li><strong>Track and store different application usage of client on device and showcase on admin portal  </strong></li>
+<li><strong>Track battery status</strong></li>
+<li><strong>Show current time according to location </strong></li>
+<li><strong>And some more...... </strong></li>
+
 
 
 <h1> Important Instructions To Run </h1>
@@ -126,7 +139,15 @@ python main.py
 2.react-router-dom
 ```
 
+## Repository Information
 
+### Commit History
 
+This repository includes a complete commit history that reflects the development process of the project. All changes and updates made during the development phase are documented in the commit history, providing a detailed record of the project's evolution.
 
+To view the commit history:
+1. Navigate to the [Commits](https://github.com/harshnishad/VinoveProject/commits) section of this repository on GitHub.
+2. Browse through the commits to see the changes made over time.
+
+For a more comprehensive understanding of the development process, you can review the commit messages and associated changes.
 
