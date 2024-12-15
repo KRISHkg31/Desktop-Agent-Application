@@ -6,7 +6,6 @@ from function.screenshot import capture_screenshot
 from function.webTracker import track_usage
 from database.db import get_detail
 from model.model import TimerState, ScreenShotTime
-from function.battery import get_battery_status 
 import subprocess
 
 timer_state = {"timerRunning": False}
@@ -67,9 +66,7 @@ async def update_timer_state(state: TimerState):
 async def employee_status():
     return {"timerRunning": timer_state["timerRunning"]}
 
-@app.get('/battery_status')
-async def battery_status():
-    return get_battery_status()
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)

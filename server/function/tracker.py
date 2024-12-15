@@ -1,8 +1,7 @@
-from pynput import mouse, keyboard
 import time
-import threading
 import ctypes
-import sys
+import multiprocessing
+from pynput import mouse, keyboard
 
 # Constants
 INACTIVITY_TIMEOUT = 30  # seconds
@@ -47,26 +46,32 @@ def check_inactivity():
             last_activity_time = current_time  # Reset the timer to prevent multiple alerts
         time.sleep(1)
 
-# Set up the mouse and keyboard listeners
-mouse_listener = mouse.Listener(
-    on_move=on_move,
-    on_click=on_click,
-    on_scroll=on_scroll
-)
+def start_listeners():
+    # Set up the mouse and keyboard listeners
+    mouse_listener = mouse.Listener(
+        on_move=on_move,
+        on_click=on_click,
+        on_scroll=on_scroll
+    )
 
-keyboard_listener = keyboard.Listener(
-    on_press=on_press,
-    on_release=on_release
-)
+    keyboard_listener = keyboard.Listener(
+        on_press=on_press,
+        on_release=on_release
+    )
 
-# Start both listeners
-mouse_listener.start()
-keyboard_listener.start()
+    # Start both listeners
+    mouse_listener.start()
+    keyboard_listener.start()
 
-# Start the inactivity check in a separate thread
-inactivity_thread = threading.Thread(target=check_inactivity, daemon=True)
-inactivity_thread.start()
+    # Join both listeners to the main thread
+    mouse_listener.join()
+    keyboard_listener.join()
 
-# Join both listeners to the main thread
-mouse_listener.join()
-keyboard_listener.join()
+if __name__ == '__main__':
+    # Start inactivity check in a separate process
+    inactivity_process = multiprocessing.Process(target=check_inactivity)
+    inactivity_process.daemon = True  # Mark as daemon to allow clean exit
+    inactivity_process.start()
+
+    # Start listeners in the main process
+    start_listeners()

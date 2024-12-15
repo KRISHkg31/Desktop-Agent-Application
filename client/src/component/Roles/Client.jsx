@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TimeDisplay from "../Utils/TimeDisplay";
-import BatteryStatus from "../Utils/BatteryStatus"; // Ensure correct import path
+
 import NetworkShow from "../Utils/Network/NetworkShow";
+import { TaskManagement } from "../Utils/TaskManagement";
 const Client = () => {
     const [timerRunning, setTimerRunning] = useState(false);
     const [activeTime, setActiveTime] = useState(0);
@@ -20,20 +21,6 @@ const Client = () => {
             .catch((error) => {
                 console.error("Error fetching data:", error);
             });
-
-        const fetchBatteryStatus = async () => {
-            try {
-                const response = await axios.get('http://127.0.0.1:8000/battery_status');
-                setBatteryStatus(response.data);
-            } catch (err) {
-                console.error('Error fetching battery status:', err);
-            }
-        };
-
-        fetchBatteryStatus();
-        const intervalId = setInterval(fetchBatteryStatus, 60000); // Fetch every minute
-
-        return () => clearInterval(intervalId);
     }, [developData]);
 
     const calculateTotalDuration = (data) => {
@@ -130,7 +117,7 @@ const Client = () => {
                 <div>
                     <TimeDisplay />
                     <NetworkShow />
-                    <BatteryStatus status={batteryStatus} /> 
+                    <TaskManagement/> 
                 </div>
             </div>
         </div>
