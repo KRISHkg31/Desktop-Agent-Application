@@ -4,7 +4,7 @@ import React from 'react';
 const NetworkConnectionBox = ({ isConnected }) => {
   return (
     <div
-      className={`flex items-center justify-center p-4 rounded-lg shadow-lg text-white ${
+      className={`flex items-center  justify-center p-4 rounded-lg shadow-lg text-white ${
         isConnected ? 'bg-green-600' : 'bg-red-600'
       }`}
     >

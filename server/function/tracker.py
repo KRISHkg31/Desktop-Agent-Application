@@ -3,8 +3,8 @@ import ctypes
 import multiprocessing
 from pynput import mouse, keyboard
 
-# Constants
-INACTIVITY_TIMEOUT = 30  # seconds
+
+INACTIVITY_TIMEOUT = 30 
 
 # Global variable to keep track of last activity time
 last_activity_time = time.time()
