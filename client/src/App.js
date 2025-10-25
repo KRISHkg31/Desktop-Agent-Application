@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './component/Home';
 import Client from './component/Roles/Client';
 import Admin from './component/Roles/Admin';
+// import { ClientStatus } from './component/Utility/ClientStatus';
 // import './style.css';
 
 function App() {
@@ -19,13 +20,14 @@ function App() {
   };
 
   return (
-    <Router>
+
       <Routes>
         <Route path="/" element={<Home onLogin={handleLogin} />} />
+        {/* <Route path="/clientStatus" element={ClientStatus}/> */}
         <Route path="/client" element={userType === 'client' ? <Client /> : <Navigate to="/" />} />
         <Route path="/admin" element={userType === 'admin' ? <Admin /> : <Navigate to="/" />} />
       </Routes>
-    </Router>
+   
   );
 }
 

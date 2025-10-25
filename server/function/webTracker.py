@@ -1,5 +1,6 @@
 import asyncio
 from datetime import datetime
+
 import pygetwindow as gw
 from database.db import insert_root
 
